@@ -139,9 +139,31 @@ void setup(void) {
 void loop() {
   // Read Unscaled Analog Inputs:
   SubAmps = analogRead(SubAnalogIn);
+  delay(100);
   MidHiAmps = analogRead(MidHiAnalogIn);
-  LedAmps = analogRead(LedAnalogIn);
+  delay(100);
+  //LedAmps = analogRead(LedAnalogIn);
+  delay(100);
   BattVolts = analogRead(BattVoltageAnalogIn);
+  delay(100);
+
+  //DEBUG STUFF
+  Serial.print("Bass Reading:     ");
+  Serial.println(SubAmps);
+  Serial.print("Mid/High Reading: ");
+  Serial.println(MidHiAmps);
+  Serial.print("LED Reading:      ");
+  Serial.println(LedAmps);
+  Serial.print("Batt Reading:     ");
+  Serial.println(BattVolts);
+  Serial.println(" ");
+  Serial.println(" ");
+  Serial.println(" ");
+  Serial.println(" ");
+
+  //delay(1000);  
+
+  
 
   //Scale the readings:
   //  values are x100, decimal point added by print function
